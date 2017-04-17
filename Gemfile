@@ -22,6 +22,8 @@ gem 'jwt'
 
 gem 'active_model_serializers'
 
+gem 'httparty'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
