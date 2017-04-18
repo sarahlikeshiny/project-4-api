@@ -3,7 +3,18 @@ class LocationsController < ApplicationController
 
   # GET /locations
   def index
+    baseUrl = 'http://api.auroras.live/v1/'
     @locations = Location.all
+
+    @locations = @locations.map do |location|
+      response = HTTParty.get(baseUrl, {
+        query: { lat: location.lat, long: location.lng, forecast: true, threeday: false, type: 'all' },
+        headers: { 'Accept' => 'application/json'}
+      })
+
+      location.probability = response.parsed_response
+      location
+    end
 
     render json: @locations
   end
