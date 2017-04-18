@@ -1,5 +1,5 @@
 
-[Location].each do |model|
+[Location, Probability].each do |model|
   ActiveRecord::Base.connection.execute("TRUNCATE #{model.table_name} RESTART IDENTITY CASCADE")
 end
 
@@ -85,4 +85,73 @@ end
   lng: -114.42
 }].each do |location|
   Location.create!(location)
+end
+
+
+[{
+  value: 2,
+  color: 'green',
+  location_id: 1,
+},{
+  value: 0,
+  color: 'green',
+  location_id: 2,
+},{
+  value: 0,
+  color: 'green',
+  location_id: 3,
+},{
+  value: 0,
+  color: 'green',
+  location_id: 4,
+},{
+  value: 19,
+  color: 'green',
+  location_id: 5,
+},{
+  value: 0,
+  color: 'green',
+  location_id: 6,
+},{
+  value: 0,
+  color: 'green',
+  location_id: 7,
+},{
+  value: 9,
+  color: 'green',
+  location_id: 8,
+},{
+  value: 0,
+  color: 'green',
+  location_id: 9,
+},{
+  value: 0,
+  color: 'green',
+  location_id: 10,
+},{
+  value: 0,
+  color: 'green',
+  location_id: 11,
+},{
+  value: 0,
+  color: 'green',
+  location_id: 12,
+},{
+  value: 0,
+  color: 'green',
+  location_id: 13,
+},{
+  value: 8,
+  color: 'green',
+  location_id: 14,
+},{
+  value: 17,
+  color: 'green',
+  location_id: 15,
+},{
+  value: 12,
+  color: 'green',
+  location_id: 16
+}].each do |probability|
+  Probability.create!(probability)
 end
