@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'places/airport'
+
   scope :api do
   resources :trips
   resources :users

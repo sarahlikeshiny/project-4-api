@@ -1,16 +1,8 @@
 class AuroraController < ApplicationController
-  def location
-    baseUrl = 'http://api.auroras.live/v1/?type=locations'
-    response = HTTParty.get("#{baseUrl}", {
-    headers: { 'Accept' => 'application/json'}
-    })
 
-  render json: response, status: :ok
-  end
-
-  def probability
+  def auroraData
     baseUrl = 'http://api.auroras.live/v1/?type=all'
-    response = HTTParty.get("&#{baseUrl}lat=#{params[:lat]}&long=#{params[:lng]}&forecast=true&threeday=true", {
+    response = HTTParty.get("&#{baseUrl}lat=#{params[:destination_lat]}&long=#{params[:destination_lng]}&forecast=true&threeday=true", {
     headers: { 'Accept' => 'application/json'}
     })
     render json: response, status: :ok
