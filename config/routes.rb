@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'places/airport'
 
   scope :api do
   resources :trips
@@ -11,6 +10,7 @@ Rails.application.routes.draw do
   post 'login', to: 'authentications#login'
   get 'location', to: 'aurora#location'
   get 'probability', to: 'aurora#probability'
+  get 'airport', to:'places#airport'
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
