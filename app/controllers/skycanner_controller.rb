@@ -2,7 +2,7 @@ class SkycannerController < ApplicationController
 
   def airports
     baseUrl = 'http://partners.api.skyscanner.net/apiservices/browsequotes/v1.0/'
-    response = HTTParty.get("#{baseUrl}GB/GBP/en-GB/48.8566,2.3508-latlong/#{params[:lat]},#{params[:lng]}-latlong/anytime/anytime?", {
+    response = HTTParty.get("#{baseUrl}GB/GBP/en-GB/#{params[:origin_lat]},#{params[:origin_lng]}-latlong/#{params[:lat]},#{params[:lng]}-latlong/anytime/anytime?", {
      query: {
         apiKey: ENV["SKYSCANNER_API_KEY"]
       },
