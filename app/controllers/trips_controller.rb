@@ -26,6 +26,7 @@ class TripsController < ApplicationController
 
   # PATCH/PUT /trips/1
   def update
+    p trip_params
     if @trip.update(trip_params)
       render json: @trip
     else
@@ -46,6 +47,6 @@ class TripsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def trip_params
-      params.require(:trip).permit(:name, :date, :origin_airport, :user_id, :origin_lat, :origin_lng)
+      params.require(:trip).permit(:name, :date, :origin_airport, :user_id, :origin_lat, :origin_lng, :destination_airport, :airline, :price, :destination_name, :destination_lat, :destination_lng)
     end
 end

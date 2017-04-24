@@ -84,9 +84,30 @@ end
   country: 'Canada',
   lat: 62.4484,
   lng: -114.42
-}].each do |location|
+},{
+  name: 'Irkusk',
+  country: 'Russia',
+  lat: 53.0859,
+  lng: 100.195
+},{
+  name: 'Sakhalin',
+  country: 'Russia',
+  lat: 50.726432,
+  lng: 142.928235
+},{
+  name: 'Reykjarvik',
+  country: 'Iceland',
+  lat: 42.1212986,
+  lng: 18.2795941
+},{
+  name: 'Ushuaia',
+  country: 'Argentina',
+  lat: 54.8052858,
+  lng: -68.3730144
+},].each do |location|
   Location.create!(location)
 end
+
 
 
 [{
@@ -153,6 +174,22 @@ end
   value: 12,
   color: 'green',
   location_id: 16
+},{
+  value: 52,
+  color: 'Orange',
+  location_id: 17
+},{
+  value: 44,
+  color: 'Yellow',
+  location_id: 18
+},{
+  value: 0,
+  color: 'Green',
+  location_id: 19
+},{
+  value: 0,
+  color: 'Green',
+  location_id: 20
 }].each do |probability|
   Probability.create!(probability)
 end
