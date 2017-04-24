@@ -3,7 +3,7 @@ class TripsController < ApplicationController
 
   # GET /trips
   def index
-    @trips = Trip.all
+    @trips = Trip.where({ user: current_user })
 
     render json: @trips
   end
@@ -16,6 +16,7 @@ class TripsController < ApplicationController
   # POST /trips
   def create
     @trip = Trip.new(trip_params)
+    @trip.user = current_user
 
     if @trip.save
       render json: @trip, status: :created, location: @trip
