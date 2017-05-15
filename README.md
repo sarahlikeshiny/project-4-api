@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# GA WDI Project 4 Sarah Miller Individual Project- Aurora Explorer. Rails API
 
-Things you may want to cover:
+## This code comprises the Rails API which serves JSON to the Angular Front-End app.
 
-* Ruby version
+This API is deployed at; https://polar-garden-45472.herokuapp.com
 
-* System dependencies
+### Installation Instructions
+In order to run this app locally first run `bundle` from the command line. In order to seed data to the database run `rails db:seed` from the terminal.
 
-* Configuration
+### Technologies Used
+* This app serves data from a Postgresql Database
+* Active Record is used as ORM
+* BCyrpt and JWT are used for encryption and authentication.
+* HTTParty and rack-CORS are used for proxy requests to third party APIs  
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+For more information on using the Aurora Explorer please see the readme for the Front-End AngularJS app. 
